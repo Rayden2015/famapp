@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(public authService: AuthenticationService) {
+  }
+
+  ngOnInit() {
+  }
 
 }
