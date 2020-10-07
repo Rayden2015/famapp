@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/auth-service.service';
+import { Member } from '../shared/member';
 
 @Component({
   selector: 'app-tab1',
@@ -8,10 +9,20 @@ import { AuthenticationService } from '../services/auth-service.service';
 })
 export class Tab1Page {
 
+  member: Member;
+  name : string = 'Init';
+
   constructor(public authService: AuthenticationService) {
   }
 
   ngOnInit() {
+ 
+  }
+
+  loadData(){
+    alert(this.name);
+    console.log('name : ' + this.name);
+    this.name = '';
   }
 
 }

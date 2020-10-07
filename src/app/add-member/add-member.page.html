@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Add Members
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Add Members</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+    <ion-list lines="full" class="ion-no-margin">
+      <ion-list-header lines="full">
+        <ion-label>
+          {{this.name}}
+        </ion-label>
+      </ion-list-header>
+      
+      <ion-item>
+        <ion-label position="floating">Surname</ion-label>
+        <ion-input type="text" [(ngModel)]="this.surname" placeholder="Enter surname" floating></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="this.firstName" placeholder="Enter your first name" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Other Names</ion-label>
+        <ion-input type="text" [(ngModel)]="this.otherNames" placeholder="Enter your other names" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Date of Birth</ion-label>
+        <ion-input type="date" [(ngModel)]="this.dob" placeholder="Select your date of Birth" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input type="text" [(ngModel)]="this.houseAddress" placeholder="Enter your Address" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input type="text" [(ngModel)]="this.emailAddress" placeholder="Enter your email address" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mobile Number</ion-label>
+        <ion-input type="text" [(ngModel)]="this.mobileNumber" placeholder="Enter your mobile number" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Alternate Mobile Number</ion-label>
+        <ion-input type="text" [(ngModel)]="this.altMobileNumber" placeholder="Enter your alternate mobile number" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select  placeholder="Select your mother's name">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select placeholder="Select your father's name">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      
+    </ion-list>
+
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="update()">
+        <ion-icon name="save"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+</ion-content>
