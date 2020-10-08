@@ -10,19 +10,11 @@ import { Member } from '../shared/member';
 export class Tab1Page {
 
   member: Member;
-  name : string = 'Init';
 
   constructor(public authService: AuthenticationService) {
   }
 
-  ngOnInit() {
- 
-  }
-
   loadData(){
-    alert(this.name);
-    console.log('name : ' + this.name);
-    this.name = '';
   }
 
 }
