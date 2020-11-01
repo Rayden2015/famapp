@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { AddMemberPageRoutingModule } from './add-member-routing.module';
 
 import { AddMemberPage } from './add-member.page';
-import { AngularFireDatabase } from '@angular/fire/database';
 
 @NgModule({
   imports: [

@@ -13,11 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
+  <ul>
+    <li *ngFor="let shirt of shirts | async">
+      {{ shirt.name }} is {{ shirt.price }}
+    </li>
+  </ul>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button href="/add-member">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
 </ion-content>

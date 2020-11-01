@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @Component({
   selector: 'app-add-member',
@@ -8,13 +7,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 })
 export class AddMemberPage implements OnInit {
 
-  constructor(private afDB: AngularFireDatabaseModule) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   addMember(){
-    
   }
 
 }
