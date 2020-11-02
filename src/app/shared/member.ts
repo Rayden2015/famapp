@@ -1,6 +1,6 @@
 export interface Member {
     id: string;
-    firstname: string;
+    firstName: string;
     lastName: string;
     otherNames: string;
     dob: string;

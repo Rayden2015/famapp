@@ -19,13 +19,13 @@ const routes: Routes = [
     loadChildren: () => import('./verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
   },
   {
+    path: 'add-member',
+    loadChildren: () => import('./add-member/add-member.module').then( m => m.AddMemberPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
-  },
-  {
-    path: 'add-member',
-    loadChildren: () => import('./add-member/add-member.module').then( m => m.AddMemberPageModule)
   }
 ];
 @NgModule({

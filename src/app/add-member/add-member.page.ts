@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from '../shared/member';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+
+
 
 @Component({
   selector: 'app-add-member',
@@ -7,12 +13,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMemberPage implements OnInit {
 
-  constructor() { }
+  member: Member = {
+    id: 'string',
+    firstName: 'string',
+    lastName: 'string',
+    otherNames: 'string',
+    dob: 'string',
+    houseAddress: 'string',
+    email: 'string',
+    mobileNumber: 'string',
+    altMobileNumber: 'string',
+    fatherName: 'string',
+    motherName: 'string',
+    photoURL: 'string'
+  };
+
+  items: Observable<any[]>;
+
+  constructor(firestore: AngularFirestore) { 
+    this.items = firestore.collection('members').valueChanges();
+  }
 
   ngOnInit() {
   }
 
-  addMember(){
+  update(){
+    console.log('AddMember | update()');
   }
 
 }
