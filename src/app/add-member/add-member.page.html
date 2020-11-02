@@ -16,22 +16,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <ul>
-    <li *ngFor="let item of items | async">
-      {{ item | json }}
-    </li>
-  </ul>
-
     <ion-list lines="full" class="ion-no-margin">
       <ion-list-header lines="full">
         <ion-label>
-          {{this.member | json}}
+          {{this.member.firstName }}  {{this.member.lastName }}
         </ion-label>
       </ion-list-header>
       
       <ion-item>
         <ion-label position="floating">Surname</ion-label>
-        <ion-input type="text" [(ngModel)]="this.member.surname" placeholder="Enter surname" floating></ion-input>
+        <ion-input type="text" [(ngModel)]="this.member.lastName" placeholder="Enter surname" floating></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">First Name</ion-label>
@@ -73,8 +67,6 @@
           <ion-select-option value="m">Male</ion-select-option>
         </ion-select>
       </ion-item>
-
-      
     </ion-list>
 
 

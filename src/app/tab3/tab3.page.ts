@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { AuthenticationService } from '../services/auth-service.service';
 
 
 
@@ -32,7 +33,8 @@ export class Tab3Page {
   constructor(
     private route: Router,
     private afAuth: AngularFireAuth,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public authService: AuthenticationService
     ) {}
 
 

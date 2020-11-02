@@ -2,10 +2,24 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// export const environment = {
+//   production: false,
+//  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   firebase : {
+//   apiKey: 'AIzaSyA5TnjnJrpOSLRmXS6Qh1esSvC2o2Ft9yk',
+//   authDomain: 'famapp-e133c.firebaseapp.com',
+//   databaseURL: 'https://famapp-e133c.firebaseio.com',
+//   projectId: 'famapp-e133c',
+//   storageBucket: 'famapp-e133c.appspot.com',
+//   messagingSenderId: '817284253902',
+//   appId: '1:817284253902:web:ca2724fb8dd83bb03aa89f',
+//   measurementId: 'G-3B41FFX068'
+// }
+// };
+
+
 export const environment = {
   production: false,
- // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  firebase : {
   apiKey: 'AIzaSyA5TnjnJrpOSLRmXS6Qh1esSvC2o2Ft9yk',
   authDomain: 'famapp-e133c.firebaseapp.com',
   databaseURL: 'https://famapp-e133c.firebaseio.com',
@@ -14,7 +28,6 @@ export const environment = {
   messagingSenderId: '817284253902',
   appId: '1:817284253902:web:ca2724fb8dd83bb03aa89f',
   measurementId: 'G-3B41FFX068'
-}
 };
 
 /*
