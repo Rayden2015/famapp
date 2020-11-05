@@ -11,4 +11,6 @@ export interface Member {
     fatherName: string;
     motherName: string;
     photoURL: string;
+    dateCreated: string,
+    dateModified: string,
  }

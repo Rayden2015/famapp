@@ -16,7 +16,8 @@
   <ion-card *ngFor="let member of members | async">
     <ion-card-header>
       <ion-card-subtitle>{{this.member.firstName}} {{this.member.lastName}}</ion-card-subtitle>
-      <ion-card-title>{{this.member.mobileNumber}}</ion-card-title>
+      <ion-card-title></ion-card-title>
+      <span>{{this.member.dateCreated | date}}</span>
     </ion-card-header>
   
     <ion-card-content>

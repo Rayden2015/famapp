@@ -55,7 +55,7 @@ export class Tab3Page {
 
       } else {
         // No user is signed in.
-        
+
       }
 
     });
