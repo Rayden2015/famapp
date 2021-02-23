@@ -19,7 +19,7 @@ export class AddMemberPage implements OnInit {
     firstName: 'string',
     lastName: 'string',
     otherNames: 'string',
-    dob: 'string',
+    dob: Date.now().toString(),
     houseAddress: 'string',
     email: 'string',
     mobileNumber: 'string',

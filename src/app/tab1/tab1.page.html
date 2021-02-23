@@ -13,16 +13,19 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-searchbar placeholder="Search members"  (ionInput)="filterMemberList($event)" animated="true"></ion-searchbar>
+
   <ion-card *ngFor="let member of members | async">
     <ion-card-header>
       <ion-card-subtitle>{{this.member.firstName}} {{this.member.lastName}}</ion-card-subtitle>
       <ion-card-title></ion-card-title>
-      <span>{{this.member.dateCreated | date}}</span>
+      
     </ion-card-header>
   
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      <span><ion-icon name="calendar-outline"></ion-icon>  {{this.member.dateCreated | date}}</span>
+      <p> <ion-icon name="call-outline"></ion-icon> {{this.member.mobileNumber}}</p>
+      <p> <ion-icon name="mail-outline"></ion-icon> {{this.member.email}}</p>
     </ion-card-content>
   </ion-card>
   

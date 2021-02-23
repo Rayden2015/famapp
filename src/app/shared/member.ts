@@ -1,5 +1,5 @@
 export interface Member {
-    id: string;
+    id?: string;
     firstName: string;
     lastName: string;
     otherNames: string;

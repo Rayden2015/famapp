@@ -36,8 +36,8 @@
         <ion-input type="text" [(ngModel)]="this.member.otherNames" placeholder="Enter your other names" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating"> Date of Birth</ion-label>
-        <ion-input type="date" [(ngModel)]="this.member.dob" placeholder="Select your date of Birth" ></ion-input>
+        <ion-label position="floating">Date of Birth</ion-label>
+        <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc" [(ngModel)]="this.member.dob"></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Address</ion-label>
@@ -56,16 +56,12 @@
         <ion-input type="text" [(ngModel)]="this.member.altMobileNumber" placeholder="Enter your alternate mobile number" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-select  placeholder="Select your mother's name" >
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-label position="floating">Mother's Name</ion-label>
+        <ion-input type="text" [(ngModel)]="this.member.motherName" placeholder="Enter your Address" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-select placeholder="Select your father's name" >
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-label position="floating">Father's Name</ion-label>
+        <ion-input type="text" [(ngModel)]="this.member.fatherName" placeholder="Enter your Address" ></ion-input>
       </ion-item>
     </ion-list>
 
