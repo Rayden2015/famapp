@@ -17,7 +17,7 @@
 
   <ion-card *ngFor="let member of members | async">
     <ion-card-header>
-      <ion-card-subtitle>{{this.member.firstName}} {{this.member.lastName}}</ion-card-subtitle>
+      <ion-card-subtitle (click)="openMemberDetailPage(this.member.id)" ><h1>{{this.member.firstName}} {{this.member.lastName}}</h1></ion-card-subtitle>
       <ion-card-title></ion-card-title>
       
     </ion-card-header>
@@ -33,7 +33,7 @@
   
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button href="/add-member">
+    <ion-fab-button [routerLink]="['/add-member']" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

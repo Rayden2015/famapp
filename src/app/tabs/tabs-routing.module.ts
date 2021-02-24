@@ -19,6 +19,26 @@ const routes: Routes = [
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
+    {
+      path: 'login',
+      loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
+    },
+    {
+      path: 'registration',
+      loadChildren: () => import('../registration/registration.module').then( m => m.RegistrationPageModule)
+    },
+    {
+      path: 'verify-email',
+      loadChildren: () => import('../verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
+    },
+    {
+      path: 'add-member',
+      loadChildren: () => import('../add-member/add-member.module').then( m => m.AddMemberPageModule)
+    },
+    {
+      path: 'tab1/:id',
+      loadChildren: () => import('../member-detail/member-detail.module').then( m => m.MemberDetailPageModule)
+    },
       {
         path: '',
         redirectTo: '/tabs/tab1',

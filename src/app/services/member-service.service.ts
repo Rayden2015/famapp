@@ -13,33 +13,37 @@ export class MemberServiceService {
 
   constructor(private afs: AngularFirestore) {
     this.MemberCollection = this.afs.collection<Member>('members');
-    this.members = this.MemberCollection.snapshotChanges().pipe(
-        map(actions => {
-          return actions.map(a => {
-            const data = a.payload.doc.data();
-            const id = a.payload.doc.id;
-            return { id, ...data };
-          });
-        })
-    );
+    // this.members = this.MemberCollection.valueChanges().pipe(
+    //     map(actions => {
+    //       return actions.map(a => {
+    //         const data = a.payload.doc.data();
+    //         const id = a.payload.doc.id;
+    //         return { id, ...data };
+    //       });
+    //     })
+    // );
+    this.members = this.MemberCollection.valueChanges();
   }
 
   getMembers(): Observable<Member[]> {
     return this.members;
   }
 
-  getMember(id: string): Observable<Member> {
-    return this.MemberCollection.doc<Member>(id).valueChanges().pipe(
-        take(1),
-        map(Member => {
-          Member.id = id;
-          return Member;
-        })
-    );
+  getMember(id: string){
+    // return this.MemberCollection.doc<Member>(id).valueChanges().pipe(
+    //     take(1),
+    //     map(Member => {
+    //       Member.id = id;
+    //       return Member;
+    //     })
+    // );
+  
+    return this.afs.collection('members', ref => ref.where('id', '==', id)).valueChanges();
   }
 
-  addMember(Member: Member): Promise<DocumentReference> {
-    return this.MemberCollection.add(Member);
+  addMember(member: Member){
+    return this.MemberCollection.doc(member.id).set(member);
+    //return this.afs.collection('members').doc(id).set(Member);
   }
 
   updateMember(Member: Member): Promise<void> {

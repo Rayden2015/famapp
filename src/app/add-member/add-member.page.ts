@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Member } from '../shared/member';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Router} from '@angular/router'
+import { Router} from '@angular/router';
+import { MemberServiceService } from '../services/member-service.service';
 
 
 
@@ -32,21 +33,22 @@ export class AddMemberPage implements OnInit {
   };
 
   items: Observable<any[]>;
-  
 
-  constructor(private firestore: AngularFirestore, private route: Router) {
-    //this.items = this.firestore.collection('members').valueChanges();
+
+  constructor(private firestore: AngularFirestore, private route: Router, private memberService: MemberServiceService) {
+    // this.items = this.firestore.collection('members').valueChanges();
   }
 
   ngOnInit() {
   }
 
-  add(){
+  add(member){
     console.log('AddMember | add()');
     const id = this.firestore.createId();
-    const memberCollection = this.firestore.collection<Member>('members');
-    
-    if(memberCollection.add(this.member)){
+    //const memberCollection = this.firestore.collection<Member>('members');
+    this.member.id = id;
+
+    if (this.memberService.addMember(this.member)){
       console.log('AddMember | add() | Member Saved Succefully ');
       alert('Member Saved Succefully');
       this.route.navigateByUrl('/tabs/tabs/tab1');

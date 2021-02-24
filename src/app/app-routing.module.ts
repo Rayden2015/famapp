@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./add-member/add-member.module').then( m => m.AddMemberPageModule)
   },
   {
+    path: 'member-detail/:id',
+    loadChildren: () => import('./member-detail/member-detail.module').then( m => m.MemberDetailPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
