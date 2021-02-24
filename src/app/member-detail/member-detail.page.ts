@@ -36,5 +36,14 @@ export class MemberDetailPage implements OnInit {
     }
   }
 
-  updateMember() {}
+  updateMember(member) {
+    try{
+      this.memberService.updateMember(member);
+      alert('Member Updated Succesfully');
+    }catch(e){
+      alert(e.message);
+      console.error('Member-detail page | updateMember() | ', e.message);
+    }
+    
+  }
 }
